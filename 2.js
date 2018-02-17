@@ -1,5 +1,5 @@
 // Problem two
-function fib() {
+var f = _ => {
   var a = b = 1, r = 0;
   while(a < 4000000) {
      a += b;
