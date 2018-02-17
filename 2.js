@@ -1,15 +1,10 @@
 // Problem two
-function fib(callback) {
-  var a = 1, b = 1, temp = 0, r = 0;
+function fib() {
+  var a = b = 1, r = 0;
   while(a < 4000000) {
-     temp = a;
-     a = a + b;
-     b = temp;
+     a += b;
+     b = a - b;
      r += a % 2 === 0 ? a : 0;
-     if( a >= 4000000) callback(r);
+     if( a >= 4000000) return r;
   }
 }
-
-fib(result => {
-  // result here
-});
