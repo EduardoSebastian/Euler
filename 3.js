@@ -1,11 +1,11 @@
 // Problem three
 function setPrimes(n) {
-  var arr = [2];
-  for(var i = 3, l = arr.length; i < n; ++i) {
-    if(checkMultiples(i, arr)) continue;
+  var arr = [2], i = 3, l = arr.length;
+  for(; i < n; ++i) {
+    if(check(i, arr)) continue;
     arr.push(i);
   }
-  function checkMultiples(n, array) {
+  function check(n, array) {
     return array.filter(cur => {
       return !(n%cur);
     }).length > 0;
