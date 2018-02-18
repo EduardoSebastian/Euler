@@ -8,3 +8,5 @@ var f = _ => {
      if( a >= 4e6) return r;
   }
 }
+
+console.log(f()); // Result
