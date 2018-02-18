@@ -25,6 +25,6 @@ function palindromic(range) {
     }
   }
   return best;
-} 
+}
 
-console.log(palindromic(3));
+console.log(palindromic(3)); // Result
