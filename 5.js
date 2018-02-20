@@ -10,5 +10,5 @@ for(var i = 2520; true; i += 20) {
   if(factorSolver(i, 20)) {
     console.log(i); // Result
     break;
-  } else if (i > 1e10) { break; }
+  }
 }
