@@ -2,11 +2,11 @@
 The solution will be more efficient in the future (when i have more knowledge about this algorithm)
 */
 function eratosthenes(n) {
-  var arr = [2], acc = 0;
+  var arr = [2];
   for(var i = 3; true; i += 2) {
     if(arr.length === n) return i - 2;
     if(!resolve(arr, i)) {
-      arr.push(i);
+      arr[arr.length] = i;
     }
   }
 }
@@ -19,4 +19,4 @@ function resolve(array, n) {
   return false;
 }
 
-eratosthenes(10001); // Result ( Tooks 350 ms )
+eratosthenes(10001); // Result ( Tooks 340 ms )
