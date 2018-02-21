@@ -1,26 +1,20 @@
 // Problem three
-function setPrimes(n) {
-  var arr = [2], i = 3, l = arr.length;
-  for(; i < n; ++i) {
-    if(check(i, arr)) continue;
-    arr.push(i);
-  }
-  function check(n, array) {
-    return array.filter(cur => {
-      return !(n%cur);
-    }).length > 0;
-  }
-  return arr;
+function getLastFactor(n) {
+ var tempArr = [2, 3], max = Math.sqrt(n);
+ for(var i = 5; i < max; i += 2) {
+  if(n%i) continue;
+  if(check(tempArr, i)) continue;
+  tempArr.push(i);
+ }
+ return tempArr[tempArr.length - 1];
 }
 
-
-function primeFactor(n) {
-  var getPrimes = setPrimes(Math.sqrt(n)), l = getPrimes.length - 1;
-  for(; l >= 0; --l) {
-    var cur = getPrimes[l];
-    if(!(n%cur)) return cur;
-  }
+function check(array, i) {
+ for(var j = 0, l = array.length; j < l; ++j) {
+  var cur = array[j];
+  if(!(i%cur)) return true;
+ }
   return false;
 }
 
-console.log(primeFactor(600851475143)); // Result
+console.log(getLastFactor(600851475143)); // Result
