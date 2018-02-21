@@ -14,9 +14,7 @@ function eratosthenes(n) {
 }
 
 function resolve(array, n) {
-  return array.filter(cur =>  {
-    return !(n%cur);
-  }).length > 0;
+  return array.some(cur => !(n%cur));
 }
 
-eratosthenes(10001); // Result ( Tooks 2800 ms )
+eratosthenes(10001); // Result ( Tooks 1300 ms )
